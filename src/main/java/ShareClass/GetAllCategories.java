@@ -14,7 +14,7 @@ public class GetAllCategories {
     public Map<Integer, String> returnCategory(){
         Map<Integer, String> map=new HashMap<Integer,String>();  
         try{
-           Connection con = DBcon.getcon();
+            Connection con = DBcon.getcon();
 
             PreparedStatement ps = con.prepareStatement("select * from news_category");
             ResultSet rs = ps.executeQuery();

@@ -19,7 +19,33 @@
     </head>
     <body class="dash-body">
         <header class="bg-white shadow-sm">
-            <%@include file="../SharePage/nav_bar.jsp" %>
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="../Dashboard_user.jsp?cat_id=0">ShortNews</a>
+                  <div class="d-flex align-items-center ">
+                      <%
+                          if(session.getAttribute("email") != null)
+                          {
+                              String email =(String) session.getAttribute("email");
+                      %>
+                      <div class="mx-4">
+                          <strong><%=email%></strong>
+                      </div>
+                      <div>
+                          <a href="../Logout" class="btn btn-danger">Logout</a>
+                      </div>
+                      <%
+                          }else{
+                      %>
+                      <div>
+                          <a href="./UserSession/login-signup.jsp" class="btn btn-primary">Signup / Login</a>
+                      </div>
+                      <%
+                          }
+                      %>
+                  </div>
+                </div>
+              </nav>
         </header>
         <div class="d-flex container">
             <%
@@ -31,14 +57,14 @@
                     <div class="d-flex justify-content-between">
                         <div class="dashboard-head h1">Dashboard</div>
                         <div>
-                            <a href="./NewsWriter/Newswriter_form.jsp" class="btn btn-primary">Create New</a>
+                            <a href="../NewsWriter/Newswriter_form.jsp" class="btn btn-primary">Create New</a>
                         </div>
                     </div>
                     <div>
                         <span class="text-gray">Check your progress from here</span>
                     </div>
                 </div>
-                <div class="px-lg-4 px-sm-2" style="margin-top: -6%">
+                <div class="px-lg-4 px-sm-2" style="margin-top: -3%">
                     <div class="dash-title-nav d-flex justify-content-around">
                             <div class="">
                                 <jsp:useBean id="views" class="ShareClass.GetTotalViewsNumber" />    
@@ -96,8 +122,9 @@
                                         <!--Table body-->
                                         <tbody>
                                         <%
+                                        Connection con = null;
                                         try{
-                                            Connection con = DBcon.getcon();
+                                            con = DBcon.getcon();
 
                                             PreparedStatement ps = con.prepareStatement("select news_id ,title, created_date, views from news where user_id="+uid+" ");
                                             ResultSet rs = ps.executeQuery();

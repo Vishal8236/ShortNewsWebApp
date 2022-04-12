@@ -37,8 +37,9 @@
                 </thead>
                 <tbody>
                 <%
+                Connection con = null;
                 try{
-                    Connection con = DBcon.getcon();
+                    con = DBcon.getcon();
 
                     PreparedStatement ps = con.prepareStatement("select user_id ,name, email , role_id from user ");
                     ResultSet rs = ps.executeQuery();
@@ -63,11 +64,11 @@
                             <td class="">
                                 <% if(rs.getInt("role_id") == 1){%>
                                 <div>
-                                    <a href="./AdminPage/change_role.jsp?id=<%=rs.getInt("user_id")%>&role_to=3">Change Role to News Writer</a>
+                                    <a href="./change_role.jsp?id=<%=rs.getInt("user_id")%>&role_to=3">Change Role to News Writer</a>
                                 </div>
                                 <%}else if (rs.getInt("role_id") == 3){%>
                                 <div>
-                                    <a href="./AdminPage/change_role.jsp?id=<%=rs.getInt("user_id")%>&role_to=1">Change Role to User</a>
+                                    <a href="./change_role.jsp?id=<%=rs.getInt("user_id")%>&role_to=1">Change Role to User</a>
                                 </div>
                                 <%}%>
                             </td>

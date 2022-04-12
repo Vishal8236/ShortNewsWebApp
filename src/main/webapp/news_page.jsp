@@ -37,9 +37,9 @@
                 list.add("bg-dark");
                 list.add("bg-warning text-dark");
                 Random rand = new Random();
-
+                Connection con = null;
                 try{
-                    Connection con = DBcon.getcon();
+                    con = DBcon.getcon();
                     PreparedStatement ps = con.prepareStatement("select title, description, img, tag from news where news_id="+nid+"");
                     ResultSet rs = ps.executeQuery();
                     while(rs.next()){

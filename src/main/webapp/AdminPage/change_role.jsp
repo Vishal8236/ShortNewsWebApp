@@ -19,6 +19,6 @@
         System.out.println(e);
     }
 
-    response.sendRedirect("./AdminPage/show_user.jsp");
+    response.sendRedirect("./show_user.jsp");
 
 %>

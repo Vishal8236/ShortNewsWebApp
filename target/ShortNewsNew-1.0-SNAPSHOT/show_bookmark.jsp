@@ -64,9 +64,9 @@
                         <div class="row row-cols-4 mt-4">
                         <%
                         int u_id =(Integer) session.getAttribute("user_id");
-                  
+                        Connection con = null;
                         try{
-                            Connection con = DBcon.getcon();
+                            con = DBcon.getcon();
                             PreparedStatement ps;
                             ps = con.prepareStatement("select news.news_id, news.img, news.title from news,bookmark_news where news.news_id = bookmark_news.news_id and  bookmark_news.user_id="+u_id+"");
 

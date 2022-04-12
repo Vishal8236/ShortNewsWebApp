@@ -5,9 +5,9 @@
     
     int cid = 0;
     cid = Integer.parseInt(catid);
-
+    Connection con = null;
     try{
-        Connection con = DBcon.getcon();
+         con = DBcon.getcon();
          PreparedStatement ps;
         if(cid == 0)
         {

@@ -72,9 +72,9 @@
                         }
                         
                         int u_id =(Integer) session.getAttribute("user_id");
-
+                        Connection con = null;
                         try{
-                            Connection con = DBcon.getcon();
+                            con = DBcon.getcon();
                             PreparedStatement ps;
                             ps = con.prepareStatement("SELECT news_id, img, title,likes, views as count FROM news GROUP BY news_id ORDER BY count desc LIMIT "+limit);
 
