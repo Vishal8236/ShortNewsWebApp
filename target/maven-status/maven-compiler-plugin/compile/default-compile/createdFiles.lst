@@ -1,0 +1,15 @@
+UserSession/UserValidate.class
+ShareClass/GetTotalViewsNumber.class
+ShareClass/AddNewsViews.class
+ShareClass/RemoveBookmark.class
+Newswriter/EditPost.class
+ShareClass/CountPost.class
+ShareClass/StoreBookmarkNews.class
+UserSession/Signup.class
+Newswriter/DeletePost.class
+ShareClass/CountLikes.class
+UserSession/Login.class
+Newswriter/AddNews.class
+ShareClass/LikePost.class
+ShareClass/GetAllCategories.class
+UserSession/Logout.class

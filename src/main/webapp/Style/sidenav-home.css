@@ -1,0 +1,65 @@
+body {
+    font-family: "Lato", sans-serif;
+}
+.shadow-cu{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.i-size{
+    width: 40px;
+    height: 40px;
+}
+
+.bg-side-nev{
+    background-color: rgba(208, 222, 228, 0.377);
+}
+.search-box-parent{
+    border-radius: 5px 5px 0px 0px;
+    padding: 0px 10px;
+    background-color: white;
+    border-bottom: 1px solid rgb(165, 159, 159);
+}
+.search-box{
+    margin-left: 10px;
+    border: none;
+    outline: none;
+    font-size: x-large;
+    color: gray;
+    width: 700px;
+}
+/* side nev classes */
+.ml-2{
+    margin-left: 15px;
+}
+
+.nav-text-color{
+    color: rgb(109, 92, 92);
+}
+
+.nav-icon-color{
+    color: rgb(80, 71, 71);
+}
+.side-nav{
+    height: 100%;
+    width: inherit;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+.p-width{
+    max-width: inherit;
+}
+
+/* topic css classes */
+.parent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 45px;
+    grid-row-gap: 20px;
+}
+.topic-shadow{
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+}
+
+

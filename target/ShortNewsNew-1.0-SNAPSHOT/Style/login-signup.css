@@ -1,0 +1,57 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+
+.shadow-login {
+    box-shadow: rgba(195, 200, 206, 0.2) 0px 8px 24px;
+}
+
+.left-bubble {
+    height: 240px;
+    width: 250px;
+    background-color: #f8c33e;
+    position: absolute;
+    bottom: 0%;
+    border-radius: 0px 300px 0px 0px;
+}
+
+.right-bubble {
+    height: 250px;
+    width: 250px;
+    background-color: #e25c6c;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    border-radius: 0px 0px 0px 300px;
+}
+
+.bg-login {
+    background-color: rgb(243, 236, 236);
+}
+
+.mt-50 {
+    margin-top: 11%;
+}
+
+.intro-login {
+    background-color: #3cb29a;
+}
+
+.login-img {
+    position: relative;
+    bottom: -9%;
+    right: -80%;
+}
+
+.signup-btn {
+    background-color: #3cb29a;
+    border: white 1px solid;
+    border-radius: 4%;
+    color: white;
+    padding: 10px 20px;
+    width: 30%;
+}
+.text-green{
+    color: #3cb29a;
+}
