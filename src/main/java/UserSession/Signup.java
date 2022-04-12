@@ -79,7 +79,7 @@ public class Signup extends HttpServlet {
                 
                 session.setAttribute("email", email);
                 
-                response.sendRedirect("/ShortNewsNew/");
+                response.sendRedirect("../Dashboard_user.jsp?cat_id=0");
             }
             catch(Exception e)
             {
