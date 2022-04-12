@@ -45,7 +45,7 @@
               to { background-position:right;}
             }
         </style>
-        <script src="./Javascript/like_post.js"></script>
+        <script type="text/javascript" src="./like_post.js"></script>
     </head>
     <body>
         <main>

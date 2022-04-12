@@ -70,11 +70,11 @@
                             <td class="">
                                 <% if(rs.getInt("role_id") == 1){%>
                                 <div>
-                                    <a href="/ShortNewsNew/AdminPage/change_role.jsp?id=<%=rs.getInt("user_id")%>&role_to=3">Change Role to News Writer</a>
+                                    <a href="./AdminPage/change_role.jsp?id=<%=rs.getInt("user_id")%>&role_to=3">Change Role to News Writer</a>
                                 </div>
                                 <%}else if (rs.getInt("role_id") == 3){%>
                                 <div>
-                                    <a href="/ShortNewsNew/AdminPage/change_role.jsp?id=<%=rs.getInt("user_id")%>&role_to=1">Change Role to User</a>
+                                    <a href="./AdminPage/change_role.jsp?id=<%=rs.getInt("user_id")%>&role_to=1">Change Role to User</a>
                                 </div>
                                 <%}%>
                             </td>

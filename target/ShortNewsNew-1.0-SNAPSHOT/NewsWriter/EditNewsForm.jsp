@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="../Style/Newswriterform.css">
         <title>Newswriter Form</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="../Javascript/Newswriter.js"></script>
+        <script src="./Newswriter.js"></script>
         <%@include file="../SharePage/bootstrap_link.jsp" %>
     </head>
 

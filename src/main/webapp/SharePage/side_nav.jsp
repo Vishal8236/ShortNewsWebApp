@@ -27,7 +27,7 @@
         <span class="text-muted">Discover</span>
         <div class="mt-3 d-flex align-items-center">
           <div class="col-2 h5"><i class="bi bi-diagram-2-fill nav-icon-color"></i></div>
-          <a class="col-10 text-left h6 nav-text-color" href="/ShortNewsNew/Dashboard_user.jsp?cat_id=0">My Feeds</a>
+          <a class="col-10 text-left h6 nav-text-color" href="./Dashboard_user.jsp?cat_id=0">My Feeds</a>
         </div>
         <div class="mt-4 d-flex align-items-center">
           <div class="col-2 h5"><i class="bi bi-grid-fill nav-icon-color"></i></div>
@@ -60,7 +60,7 @@
                 {
            %>
             <div class="dashboard-btn">
-                <a class="text-white" href="/ShortNewsNew/AdminPage/show_user.jsp">Dashboard</a>
+                <a class="text-white" href="./AdminPage/show_user.jsp">Dashboard</a>
             </div>
           <%}}%>
 
@@ -72,12 +72,23 @@
                 {
            %>
             <div class="dashboard-btn">
-                <a class="text-white" href="/ShortNewsNew/NewsWriter/Dashboard.jsp">News Dashboard</a>
+                <a class="text-white" href="./NewsWriter/Dashboard.jsp">News Dashboard</a>
             </div>
           <%}}%>
-          <div class="logout-btn">
-              <a class="text-black" href="/ShortNewsNew/Logout">Logout</a>
-          </div>
+          
+          <%
+            if(session.getAttribute("email") != null)
+            {
+          %>      
+            <div class="logout-btn">
+              <a class="text-black" href="./Logout">Logout</a>
+            </div>
+          <%}else{%>  
+            <div class="login-btn">
+              <a class="text-white" href="./UserSession/login-signup.jsp">Login/Signup</a>
+            </div>
+          <%}%>
+          
       </div>
     </div>
 </div>

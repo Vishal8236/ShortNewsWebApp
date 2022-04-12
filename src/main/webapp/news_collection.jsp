@@ -32,7 +32,7 @@
     <div class="col my-3 position-relative" id="<%=rs.getInt("news_id")%>">
         <div class="card shadow-cu" style="max-width: 22rem; height: 21rem;" >
             <div class="card-body fw-bold" style="max-height: 90px; overflow-y: hidden;">
-                <a href="/ShortNewsNew/news_page.jsp?news_id=<%=rs.getInt("news_id")%>"><%=title%></a>
+                <a href="./news_page.jsp?news_id=<%=rs.getInt("news_id")%>"><%=title%></a>
             </div>
           <div class="px-3">
               <img src="data:image/jpg;base64,${requestScope['imageBt']}" class="card-img-top" alt="...">

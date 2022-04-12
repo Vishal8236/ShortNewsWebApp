@@ -113,12 +113,12 @@
                                         %>
                                           <tr style="LINE-HEIGHT:50px">
                                                 <th scope="row"><%=rs.getInt("news_id")%></th>
-                                                <td ><a href="/ShortNewsNew/news_page.jsp?news_id=<%=rs.getInt("news_id")%>"><%=rs.getString("title")%></a></td>
+                                                <td ><a href="./news_page.jsp?news_id=<%=rs.getInt("news_id")%>"><%=rs.getString("title")%></a></td>
                                                 <td><%=rs.getInt("views")%></td>
                                                 <td>
                                                     <div>
-                                                        <a href="/ShortNewsNew/DeletePost?news_id=<%=rs.getInt("news_id")%>" class="btn btn-outline-danger">Delete</a>
-                                                        <a href="/ShortNewsNew/NewsWriter/EditNewsForm.jsp?news_id=<%=rs.getInt("news_id")%>" class="btn btn-outline-success">Edit</a>
+                                                        <a href="./NewsWriter/DeletePost?news_id=<%=rs.getInt("news_id")%>" class="btn btn-outline-danger">Delete</a>
+                                                        <a href="./NewsWriter/EditNewsForm.jsp?news_id=<%=rs.getInt("news_id")%>" class="btn btn-outline-success">Edit</a>
                                                     </div>
                                                 </td>
                                                 <td class=""><%=rs.getString("created_date")%></td>

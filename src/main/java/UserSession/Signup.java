@@ -39,6 +39,7 @@ public class Signup extends HttpServlet {
             String c_password = request.getParameter("c_password");
             int default_role = 1;
             PrintWriter out = response.getWriter();
+            HttpSession session = request.getSession();
 
             try{
                 Class.forName("com.mysql.jdbc.Driver");
@@ -54,9 +55,30 @@ public class Signup extends HttpServlet {
                 
                 int res = pt.executeUpdate();
                 
-                HttpSession session = request.getSession();
+                if(res == 1)
+                {
+                    Statement st = con.createStatement();
+                    ResultSet rs = st.executeQuery("select role_id, user_id from user where email='"+email+"'"); 
+
+                    while(rs.next())
+                    {
+                        session.setAttribute("user_id", rs.getInt("user_id"));
+                        int role = rs.getInt("role_id");
+                        if(role == 1)
+                        {
+                            session.setAttribute("role","user");
+
+                        }else if(role == 3)
+                        {
+                            session.setAttribute("role","news writer");
+                        }
+                    }
+                }
+              
+                
+                
                 session.setAttribute("email", email);
-                session.setAttribute("role", default_role);
+                
                 response.sendRedirect("/ShortNewsNew/");
             }
             catch(Exception e)

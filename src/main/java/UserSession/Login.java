@@ -70,11 +70,11 @@ public class Login extends HttpServlet {
                 out.print(e);
             }
             
-            response.sendRedirect("/ShortNewsNew/Dashboard_user.jsp?cat_id=0");
+            response.sendRedirect("./Dashboard_user.jsp?cat_id=0");
          }
          else
          {
-            response.sendRedirect("/ShortNewsNew/UserSession/login-signup.jsp?error='invalid'");
+            response.sendRedirect("./UserSession/login-signup.jsp?error='invalid'");
             
          }
     }

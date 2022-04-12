@@ -36,7 +36,7 @@ public class DeletePost extends HttpServlet {
             p = con.prepareStatement(sql);
             p.execute();
             
-            response.sendRedirect("/ShortNewsNew/NewsWriter/Dashboard.jsp");
+            response.sendRedirect("./NewsWriter/Dashboard.jsp");
         }catch(Exception  e){
             System.out.println(e);
         }

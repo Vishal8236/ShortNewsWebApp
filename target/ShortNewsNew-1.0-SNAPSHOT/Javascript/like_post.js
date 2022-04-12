@@ -4,9 +4,10 @@
  */
 
 
-
+console.log("hello shortnewsnew")
 function doLike(id)
 {
+    console.log(id);
     var likeop = document.getElementById(`likebtn${id}`);
     likeop.classList.toggle("is_animating")
     likeop.addEventListener("animationend", ()=>{
@@ -15,7 +16,7 @@ function doLike(id)
     
     let lcount = document.getElementById(`likec${id}`).innerHTML;    
      $.ajax({
-        url: "/ShortNews/LikePost",
+        url: "./LikePost",
         data: {"news_id": id},
         cache: false,
         success: function(data) {
@@ -26,8 +27,9 @@ function doLike(id)
 
 function doBookmark(id)
 {
+    console.log(id);
     $.ajax({
-        url: "/ShortNews/StoreBookmarkNews",
+        url: "/ShortNewsNew/StoreBookmarkNews",
         data: {"news_id": id},
         cache: false,
         success: function(data) {
@@ -41,7 +43,7 @@ function removeBookmark(id)
 {
     var div = document.getElementById(`${id}`)
     $.ajax({
-        url: "/ShortNews/RemoveBookmark",
+        url: "/ShortNewsNew/RemoveBookmark",
         data: {"news_id": id},
         cache: false,
         success: function(data) {

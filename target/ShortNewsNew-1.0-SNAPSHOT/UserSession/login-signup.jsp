@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="../Style/login-signup.css" />
         <link rel="stylesheet" href="../SharePage/global-css.css" />
         <%@include file="../SharePage/bootstrap_link.jsp" %>
-        <script src="../Javascript/login-signup.js"></script>
+        <script src="./login-signup.js"></script>
     </head>
     <body class="bg-login">
         <div class="mt-50 justify-content-center d-flex">
@@ -44,7 +44,7 @@
                         <span class="h1 text-green">Login</span>
                     </div>
                     <div class="mt-4">
-                        <form action="/ShortNewsNew/UserSession/Login" method="POST">
+                        <form action="./Login" method="POST">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email address</label>
                                 <input type="email" name="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp">
@@ -73,7 +73,7 @@
                         <span class="h1">Signup</span>
                     </div>
                     <div class="mt-4">
-                        <form action="/ShortNewsNew/UserSession/Signup" method="POST">
+                        <form action="./Signup" method="POST">
                             <div class="mb-3">
                                 <label for="exampleInputName" class="form-label">Name</label>
                                 <input type="text" name="name" class="form-control " id="exampleInputName" aria-describedby="nameHelp">

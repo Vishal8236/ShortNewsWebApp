@@ -25,6 +25,6 @@
         System.out.println(e);
     }
 
-    response.sendRedirect("/ShortNewsNew/AdminPage/show_user.jsp");
+    response.sendRedirect("./AdminPage/show_user.jsp");
 
 %>

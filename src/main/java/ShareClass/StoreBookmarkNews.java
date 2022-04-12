@@ -30,6 +30,7 @@ public class StoreBookmarkNews extends HttpServlet {
         int nid = Integer.parseInt(id);
         HttpSession session=request.getSession();  
         int u_id =(Integer) session.getAttribute("user_id");
+        System.out.println("Some error");
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/shortnews","root","python1234");

@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="../Style/Newswriterform.css">
         <title>Newswriter Form</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="../Javascript/Newswriter.js"></script>
+        <script src="./Newswriter.js"></script>
         <%@include file="../SharePage/bootstrap_link.jsp" %>
     </head>
 
@@ -39,7 +39,7 @@
 
                         </ul>
                     </div>
-                   <form action="/ShortNewsNew/AddNews"  method="POST" enctype="multipart/form-data" >
+                   <form action="/AddNews"  method="POST" enctype="multipart/form-data" >
                         <div class="bg-white border rounded">
                             <div class=" px-4 py-3">
                                 <div>

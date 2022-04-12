@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>News</title>
         <%@include  file="./SharePage/bootstrap_link.jsp" %>
-        <link rel="stylesheet" href="./Style/user_dashboard.css">
+        <link type="text/css" rel="stylesheet" href="./Style/user_dashboard.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <style>
             .dashboard-btn{
@@ -44,8 +44,17 @@
               from {background-position:left;}
               to { background-position:right;}
             }
+            .login-btn{
+                background-color: #0d6efd;
+                width: 260px;
+                padding: 10px;
+                margin-bottom: 10px;
+                text-align: center;
+                border-radius: 5px;
+                cursor: pointer;
+            }
         </style>
-        <script src="./Javascript/like_post.js"></script>
+        <script type="text/javascript" src="./like_post.js"></script>
     </head>
     <body>
         <main>

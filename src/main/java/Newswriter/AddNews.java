@@ -68,7 +68,7 @@ public class AddNews extends HttpServlet {
             pt.setInt(7, cat_id);
             pt.executeUpdate();
 
-            response.sendRedirect("/ShortNewsNew/NewsWriter/Dashboard.jsp");
+            response.sendRedirect("./NewsWriter/Dashboard.jsp");
         }    
         catch(ClassNotFoundException e)
         {
