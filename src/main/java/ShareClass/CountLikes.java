@@ -4,6 +4,7 @@
  */
 package ShareClass;
 
+import DB.DBcon;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -15,8 +16,7 @@ public class CountLikes {
     {
         int count = 0;
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/shortnews","root","python1234");
+            Connection con = DBcon.getcon();
 
             Statement stmt = con.createStatement();
             String query = "select sum(likes) from news where user_id="+user_id;

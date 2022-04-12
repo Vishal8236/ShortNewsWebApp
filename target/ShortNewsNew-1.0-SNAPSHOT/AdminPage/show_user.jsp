@@ -1,3 +1,4 @@
+<%@page import="DB.DBcon"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -36,16 +37,8 @@
                 </thead>
                 <tbody>
                 <%
-                
-                String connectionURL = "jdbc:mysql://localhost:3306/shortnews";
-                String user = "root";
-                String pass = "python1234";
-
-                Connection con = null;
-
                 try{
-                    Class.forName("com.mysql.jdbc.Driver");
-                    con = DriverManager.getConnection(connectionURL, user, pass);
+                    Connection con = DBcon.getcon();
 
                     PreparedStatement ps = con.prepareStatement("select user_id ,name, email , role_id from user ");
                     ResultSet rs = ps.executeQuery();

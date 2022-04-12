@@ -5,6 +5,7 @@
 
 package ShareClass;
 
+import DB.DBcon;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
@@ -32,8 +33,7 @@ public class StoreBookmarkNews extends HttpServlet {
         int u_id =(Integer) session.getAttribute("user_id");
         System.out.println("Some error");
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/shortnews","root","python1234");
+            Connection con = DBcon.getcon();
 
             String query = "insert into bookmark_news(user_id, news_id) values(?,?)";
             PreparedStatement pt = con.prepareStatement(query);

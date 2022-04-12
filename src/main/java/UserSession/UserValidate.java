@@ -1,6 +1,7 @@
 
 package UserSession;
 
+import DB.DBcon;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -15,8 +16,7 @@ public class UserValidate {
         
         try
          {
-            Class.forName("com.mysql.jdbc.Driver");
-           Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/shortnews","root","python1234");
+            Connection con = DBcon.getcon();
             
             String query = "select email and password from user where email=? and password=?";
             PreparedStatement pt = con.prepareStatement(query);
@@ -26,10 +26,6 @@ public class UserValidate {
              
             ResultSet rs=pt.executeQuery();  
             status = rs.next();
-         }
-              catch( ClassNotFoundException e)
-         {
-             System.out.println("class not found exception");
          }
          catch(SQLException e)
          {

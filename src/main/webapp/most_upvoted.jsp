@@ -1,3 +1,4 @@
+<%@page import="DB.DBcon"%>
 <%@page import="org.apache.tomcat.util.codec.binary.Base64"%>
 <%@page import="java.sql.*"%>
 <%@page import="ShareClass.StoreBookmarkNews"%>
@@ -71,13 +72,8 @@
                         }
                         
                         int u_id =(Integer) session.getAttribute("user_id");
-                        String connectionURL = "jdbc:mysql://localhost:3306/shortnews";
-                        String user = "root";
-                        String pass = "python1234";
-                        Connection con = null;
                         try{
-                            Class.forName("com.mysql.jdbc.Driver");
-                            con = DriverManager.getConnection(connectionURL, user, pass);
+                            Connection con = DBcon.getcon();
                             PreparedStatement ps;
                             ps = con.prepareStatement("SELECT news_id, img, title, likes,likes as count FROM news GROUP BY news_id ORDER BY count desc LIMIT "+limit);
 

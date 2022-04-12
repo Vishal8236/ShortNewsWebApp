@@ -5,6 +5,7 @@
 
 package ShareClass;
 
+import DB.DBcon;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -33,8 +34,7 @@ public class RemoveBookmark extends HttpServlet {
         HttpSession session=request.getSession();  
         int u_id =(Integer) session.getAttribute("user_id");
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/shortnews","root","python1234");
+            Connection con = DBcon.getcon();
 
             String query = "delete from bookmark_news where user_id="+u_id+" and news_id="+nid+"";
             PreparedStatement pt = con.prepareStatement(query);

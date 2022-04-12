@@ -4,6 +4,7 @@
  */
 package UserSession;
 
+import DB.DBcon;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -42,8 +43,7 @@ public class Signup extends HttpServlet {
             HttpSession session = request.getSession();
 
             try{
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/shortnews","root","python1234");
+                Connection con = DBcon.getcon();
                 
                 String query = "insert into user(name, email, password, role_id) values(?,?,?,?)";
                 PreparedStatement pt = con.prepareStatement(query);

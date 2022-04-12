@@ -1,3 +1,4 @@
+<%@page import="DB.DBcon"%>
 <%@page import="java.sql.*"%>
 <%
   
@@ -7,15 +8,8 @@
 %>   
 
 <%
- String connectionURL = "jdbc:mysql://localhost:3306/shortnews";
-    String user = "root";
-    String pass = "python1234";
-
-    Connection con = null;
-
     try{
-        Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection(connectionURL, user, pass);
+        Connection con = DBcon.getcon();
 
         PreparedStatement ps = con.prepareStatement("update user set role_id ="+role_to+" where user_id = "+uid+"");
         ps.execute();

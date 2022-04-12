@@ -4,6 +4,7 @@
  */
 package ShareClass;
 
+import DB.DBcon;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -31,13 +32,11 @@ public class LikePost extends HttpServlet {
             System.out.println(request.getParameter("news_id"));
             String id = (String) request.getParameter("news_id");
             int nid = Integer.parseInt(id);
-            String jdbcUrl = "jdbc:mysql://localhost:3306/shortnews";
-            String username = "root";
-            String password = "python1234";
+
             String sql = "update news set likes=likes+1 where news_id="+nid;
 
-            try (Connection conn = DriverManager.getConnection(jdbcUrl, username, password); 
-                Statement stmt = conn.createStatement();) {
+            try (Connection con = DBcon.getcon(); 
+                Statement stmt = con.createStatement();) {
 
                 stmt.executeUpdate(sql);
 

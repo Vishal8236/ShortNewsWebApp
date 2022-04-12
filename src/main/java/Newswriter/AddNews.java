@@ -4,6 +4,7 @@
  */
 package Newswriter;
 
+import DB.DBcon;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
@@ -49,9 +50,7 @@ public class AddNews extends HttpServlet {
         
         try
         {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/shortnews","root","python1234");
-
+            Connection con = DBcon.getcon();
             String query = "insert into news (title, description, tag, img, created_date, user_id, cat_id) values (?,?,?,?,?,?,?)";
             PreparedStatement pt = con.prepareStatement(query);
 
@@ -70,11 +69,7 @@ public class AddNews extends HttpServlet {
 
             response.sendRedirect("./NewsWriter/Dashboard.jsp");
         }    
-        catch(ClassNotFoundException e)
-        {
-            out.println("<h1>class not found exception</h1>");
-        }
-        catch(SQLException e)
+        catch(Exception e)
         {
             out.println("<h1>sql exception</h1>");
         }

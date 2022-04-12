@@ -1,3 +1,4 @@
+<%@page import="DB.DBcon"%>
 <%@page import="ShareClass.GetTotalViewsNumber"%>
 <%@page import="ShareClass.CountLikes"%>
 <%@page import="ShareClass.CountPost"%>
@@ -30,7 +31,7 @@
                     <div class="d-flex justify-content-between">
                         <div class="dashboard-head h1">Dashboard</div>
                         <div>
-                            <a href="/ShortNewsNew/NewsWriter/Newswriter_form.jsp" class="btn btn-primary">Create New</a>
+                            <a href="./NewsWriter/Newswriter_form.jsp" class="btn btn-primary">Create New</a>
                         </div>
                     </div>
                     <div>
@@ -95,16 +96,8 @@
                                         <!--Table body-->
                                         <tbody>
                                         <%
-                                        
-                                        String connectionURL = "jdbc:mysql://localhost:3306/shortnews";
-                                        String user = "root";
-                                        String pass = "python1234";
-
-                                        Connection con = null;
-
                                         try{
-                                            Class.forName("com.mysql.jdbc.Driver");
-                                            con = DriverManager.getConnection(connectionURL, user, pass);
+                                            Connection con = DBcon.getcon();
 
                                             PreparedStatement ps = con.prepareStatement("select news_id ,title, created_date, views from news where user_id="+uid+" ");
                                             ResultSet rs = ps.executeQuery();

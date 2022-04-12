@@ -4,6 +4,7 @@
  */
 package ShareClass;
 
+import DB.DBcon;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
@@ -11,13 +12,11 @@ import java.sql.Statement;
 public class AddNewsViews {
     public void addNewsViewsCount(int newsid)
     {
-        String jdbcUrl = "jdbc:mysql://localhost:3306/shortnews";
-        String username = "root";
-        String password = "python1234";
+       
         String sql = "update news set views=views+1 where news_id="+newsid;
-
-        try (Connection conn = DriverManager.getConnection(jdbcUrl, username, password); 
-            Statement stmt = conn.createStatement();) {
+ 
+        try (Connection con = DBcon.getcon();
+            Statement stmt = con.createStatement();) {
 
             stmt.executeUpdate(sql);
 

@@ -1,3 +1,4 @@
+<%@page import="DB.DBcon"%>
 <%@page import="org.apache.tomcat.util.codec.binary.Base64"%>
 <%@page import="java.sql.*"%>
 <%@page import="ShareClass.StoreBookmarkNews"%>
@@ -63,13 +64,9 @@
                         <div class="row row-cols-4 mt-4">
                         <%
                         int u_id =(Integer) session.getAttribute("user_id");
-                        String connectionURL = "jdbc:mysql://localhost:3306/shortnews";
-                        String user = "root";
-                        String pass = "python1234";
-                        Connection con = null;
+                  
                         try{
-                            Class.forName("com.mysql.jdbc.Driver");
-                            con = DriverManager.getConnection(connectionURL, user, pass);
+                            Connection con = DBcon.getcon();
                             PreparedStatement ps;
                             ps = con.prepareStatement("select news.news_id, news.img, news.title from news,bookmark_news where news.news_id = bookmark_news.news_id and  bookmark_news.user_id="+u_id+"");
 

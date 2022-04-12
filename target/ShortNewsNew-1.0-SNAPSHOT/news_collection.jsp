@@ -5,14 +5,9 @@
     
     int cid = 0;
     cid = Integer.parseInt(catid);
-    
-    String connectionURL = "jdbc:mysql://localhost:3306/shortnews";
-    String user = "root";
-    String pass = "python1234";
-    Connection con = null;
+
     try{
-        Class.forName("com.mysql.jdbc.Driver");
-        con = DriverManager.getConnection(connectionURL, user, pass);
+        Connection con = DBcon.getcon();
          PreparedStatement ps;
         if(cid == 0)
         {

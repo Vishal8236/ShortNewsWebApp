@@ -1,4 +1,5 @@
- <%@page import="ShareClass.AddNewsViews"%>
+ <%@page import="DB.DBcon"%>
+<%@page import="ShareClass.AddNewsViews"%>
 <%@page import="java.util.Random"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
@@ -36,14 +37,9 @@
                 list.add("bg-dark");
                 list.add("bg-warning text-dark");
                 Random rand = new Random();
-                
-                String connectionURL = "jdbc:mysql://localhost:3306/shortnews";
-                String user = "root";
-                String pass = "python1234";
-                Connection con = null;
+
                 try{
-                    Class.forName("com.mysql.jdbc.Driver");
-                    con = DriverManager.getConnection(connectionURL, user, pass);
+                    Connection con = DBcon.getcon();
                     PreparedStatement ps = con.prepareStatement("select title, description, img, tag from news where news_id="+nid+"");
                     ResultSet rs = ps.executeQuery();
                     while(rs.next()){

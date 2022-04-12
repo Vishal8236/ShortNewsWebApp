@@ -1,6 +1,7 @@
 <%@page import="org.apache.tomcat.util.codec.binary.Base64"%>
 <%@page import="java.sql.*"%>
 <%@page import="ShareClass.StoreBookmarkNews"%>
+<%@page import="DB.DBcon"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

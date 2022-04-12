@@ -4,6 +4,7 @@
  */
 package UserSession;
 
+import DB.DBcon;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -44,8 +45,7 @@ public class Login extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("email",email);
             try{
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/shortnews","root","python1234");
+                Connection con = DBcon.getcon();
                 
                 Statement st = con.createStatement();
                 ResultSet rs = st.executeQuery("select role_id, user_id from user where email='"+email+"'"); 

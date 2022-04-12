@@ -4,6 +4,7 @@
  */
 package Newswriter;
 
+import DB.DBcon;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
@@ -29,8 +30,7 @@ public class DeletePost extends HttpServlet {
         String id = request.getParameter("news_id");
         
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/shortnews","root","python1234");
+            Connection con = DBcon.getcon();
             PreparedStatement p=null;
             String sql="delete from news where news_id="+Integer.parseInt(id);
             p = con.prepareStatement(sql);

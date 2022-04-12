@@ -4,6 +4,7 @@
  */
 package ShareClass;
 
+import DB.DBcon;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
@@ -12,16 +13,8 @@ import java.util.Map;
 public class GetAllCategories {
     public Map<Integer, String> returnCategory(){
         Map<Integer, String> map=new HashMap<Integer,String>();  
-        
-        String connectionURL = "jdbc:mysql://localhost:3306/shortnews";
-        String user = "root";
-        String pass = "python1234";
-
-        Connection con = null;
-
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection(connectionURL, user, pass);
+           Connection con = DBcon.getcon();
 
             PreparedStatement ps = con.prepareStatement("select * from news_category");
             ResultSet rs = ps.executeQuery();
