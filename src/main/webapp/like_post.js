@@ -4,7 +4,7 @@
  */
 
 
-console.log("hello shortnewsnew")
+console.log("hellosds ")
 function doLike(id)
 {
     console.log(id);
@@ -21,6 +21,11 @@ function doLike(id)
         cache: false,
         success: function(data) {
             $(`#likec${id}`).html(parseInt(lcount)+1);
+            var showalt = document.getElementById('show-alert');
+            showalt.classList.remove("d-none");
+            showalt.classList.remove("bg-warning");
+            showalt.classList.add("bg-success");
+            showalt.innerText = "You like this post!"
         }
     })
 }
@@ -32,10 +37,20 @@ function doBookmark(id)
         url: "./StoreBookmarkNews",
         data: {"news_id": id},
         cache: false,
-        success: function(data) {
-//            $(`#likec${id}`).html(parseInt(lcount)+1);
+    }).done(function(res){
+        if(res == "success")
+        {
+            var showalt = document.getElementById('show-alert');
+            showalt.classList.remove("d-none");
+            showalt.classList.remove("bg-warning");
+            showalt.classList.add("bg-success");
+            showalt.innerText = "This post is successfully bookmarked!"
         }
-    })
+        else {
+            var showalt = document.getElementById('show-alert');
+            showalt.classList.remove("d-none");
+        }
+    });
 }
 
 
@@ -52,3 +67,5 @@ function removeBookmark(id)
         }
     })
 }
+
+

@@ -1,6 +1,7 @@
 /home/vijay-patidar/NetBeansProjects/ShortNewsNew/src/main/java/ShareClass/CountLikes.java
 /home/vijay-patidar/NetBeansProjects/ShortNewsNew/src/main/java/Newswriter/EditPost.java
 /home/vijay-patidar/NetBeansProjects/ShortNewsNew/src/main/java/ShareClass/AddNewsViews.java
+/home/vijay-patidar/NetBeansProjects/ShortNewsNew/src/main/java/DB/DBcon.java
 /home/vijay-patidar/NetBeansProjects/ShortNewsNew/src/main/java/ShareClass/RemoveBookmark.java
 /home/vijay-patidar/NetBeansProjects/ShortNewsNew/src/main/java/ShareClass/GetTotalViewsNumber.java
 /home/vijay-patidar/NetBeansProjects/ShortNewsNew/src/main/java/ShareClass/GetAllCategories.java

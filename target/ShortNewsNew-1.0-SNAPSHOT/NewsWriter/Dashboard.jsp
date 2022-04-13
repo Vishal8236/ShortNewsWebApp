@@ -1,3 +1,9 @@
+<% if (session.getAttribute("email") != null && session.getAttribute("user_id") != null) {
+        session.getAttribute("email");
+    } else {
+        response.sendRedirect("../UserSession/login-signup.jsp");
+    }
+%>
 <%@page import="DB.DBcon"%>
 <%@page import="ShareClass.GetTotalViewsNumber"%>
 <%@page import="ShareClass.CountLikes"%>
@@ -49,7 +55,10 @@
         </header>
         <div class="d-flex container">
             <%
-                int uid = (Integer) session.getAttribute("user_id");
+                int uid = 0;
+                if (session.getAttribute("user_id") != null){
+                    uid = (Integer) session.getAttribute("user_id");
+                }
             %>
             
             <div class="col-lg-12 col-sm-12">

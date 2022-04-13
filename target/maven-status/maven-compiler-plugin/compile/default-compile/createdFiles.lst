@@ -9,6 +9,7 @@ UserSession/Signup.class
 Newswriter/DeletePost.class
 ShareClass/CountLikes.class
 UserSession/Login.class
+DB/DBcon.class
 Newswriter/AddNews.class
 ShareClass/LikePost.class
 ShareClass/GetAllCategories.class

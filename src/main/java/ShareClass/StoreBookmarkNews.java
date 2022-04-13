@@ -27,25 +27,39 @@ public class StoreBookmarkNews extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
+        response.setContentType("application/plain");
+        response.setCharacterEncoding("UTF-8");
+        PrintWriter out = response.getWriter();
+
         String id = (String) request.getParameter("news_id");
         int nid = Integer.parseInt(id);
         HttpSession session=request.getSession();  
-        int u_id =(Integer) session.getAttribute("user_id");
-        System.out.println("Some error");
-        try{
-            Connection con = DBcon.getcon();
-
-            String query = "insert into bookmark_news(user_id, news_id) values(?,?)";
-            PreparedStatement pt = con.prepareStatement(query);
-
-            pt.setInt(1, u_id);
-            pt.setInt(2, nid);
-
-            int res = pt.executeUpdate();
-        }
-        catch(Exception e)
+        if(session.getAttribute("user_id") != null)
         {
-             System.out.print(e);
+            int u_id =(Integer) session.getAttribute("user_id");
+            System.out.println("Some error");
+            try{
+                Connection con = DBcon.getcon();
+
+                String query = "insert into bookmark_news(user_id, news_id) values(?,?)";
+                PreparedStatement pt = con.prepareStatement(query);
+
+                pt.setInt(1, u_id);
+                pt.setInt(2, nid);
+
+                int res = pt.executeUpdate();
+            }
+            catch(Exception e)
+            {
+                 System.out.print(e);
+            }
+            String jsonStr = "success";
+            response.getWriter().write(jsonStr);
+        }
+        else{
+//            String objectToReturn = "{ error: 'Please do login before this action' }";
+            String jsonStr = "error";
+            response.getWriter().write(jsonStr);
         }
     } 
 

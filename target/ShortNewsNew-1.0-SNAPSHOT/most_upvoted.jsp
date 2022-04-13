@@ -143,6 +143,7 @@
 
               </div>
             </div>
+            <%@include  file="./SharePage/alert-message.jsp" %>
         </main>
     </body>
 </html>
