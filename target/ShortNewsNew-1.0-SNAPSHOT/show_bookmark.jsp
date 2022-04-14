@@ -1,3 +1,9 @@
+<% if (session.getAttribute("email") != null && session.getAttribute("user_id") != null) {
+        session.getAttribute("email");
+    } else {
+        response.sendRedirect("./UserSession/login-signup.jsp");
+    }
+%>
 <%@page import="DB.DBcon"%>
 <%@page import="org.apache.tomcat.util.codec.binary.Base64"%>
 <%@page import="java.sql.*"%>
@@ -22,29 +28,6 @@
                 background-color: #002c59;
                 box-shadow: 1px 7px 30px -6px #002c59;
             }
-            /*twiiter like button*/ 
-            .heart {
-              cursor: pointer;
-              height: 50px;
-              width: 50px;
-              background-image:url( 'https://abs.twimg.com/a/1446542199/img/t1/web_heart_animation.png');
-              background-position: left;
-              background-repeat:no-repeat;
-              background-size:2900%;
-            }
-
-            .heart:hover {
-              background-position:right;
-            }
-
-            .is_animating {
-              animation: heart-burst .8s steps(28) 1;
-            }
-
-            @keyframes heart-burst {
-              from {background-position:left;}
-              to { background-position:right;}
-            }
         </style>
         <script src="./like_post.js"></script>
     </head>
@@ -63,7 +46,10 @@
 
                         <div class="row row-cols-4 mt-4">
                         <%
-                        int u_id =(Integer) session.getAttribute("user_id");
+                        int u_id = 0;
+                        if (session.getAttribute("user_id") != null){
+                            u_id =(Integer) session.getAttribute("user_id");
+                        }
                         Connection con = null;
                         try{
                             con = DBcon.getcon();
@@ -113,7 +99,7 @@
                     </div>
                 </div>
 
-              </div>
+              </div>    
             </div>
         </main>
     </body>

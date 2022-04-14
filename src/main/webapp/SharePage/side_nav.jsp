@@ -45,10 +45,6 @@
           <div class="col-2 h5"><i class="bi bi-bookmark-fill nav-icon-color"></i></div>
           <a class="col-10 text-left h6 nav-text-color" href="./show_bookmark.jsp">Bookmark</a>
         </div>
-        <div class="mt-4 d-flex align-items-center">
-          <div class="col-2 h4"><i class="bi bi-suit-heart-fill nav-icon-color"></i></div>
-          <div class="col-10 text-left h6 nav-text-color">Like post</div>
-        </div>
       </div>
 
       <div class="position-absolute bottom-0 ">

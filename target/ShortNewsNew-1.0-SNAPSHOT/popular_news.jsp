@@ -108,7 +108,7 @@
                                             <%=rs.getInt("likes")%>
                                         </span>
                                     </div>
-                                    <div class="col">
+                                    <div class="col" onclick="showLink(<%=rs.getInt("news_id")%>)">
                                         <i class="bi bi-cursor i-size"></i>  
                                     </div>
                                     <div class="col" onclick="doBookmark(<%=rs.getInt("news_id")%>)">

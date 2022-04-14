@@ -85,4 +85,7 @@
         <error-code>404</error-code>
         <location>/error500.jsp</location>
     </error-page>
+    <welcome-file-list>  
+        <welcome-file>index.jsp</welcome-file>  
+   </welcome-file-list>  
 </web-app>

@@ -60,12 +60,6 @@
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
-                        <div class="mt-3">
-                            <a href="">Forgot Password</a>
-                        </div>
-                        <div class="mt-3">
-                            <a href="">New user? create account</a>
-                        </div>
                     </div>
                 </div>
                 <div id="Signup" class="col-6 py-2 px-4">

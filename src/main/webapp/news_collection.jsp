@@ -1,7 +1,10 @@
 <div class="row row-cols-4 mt-4">
     <%
     String catid = "";
-    catid = request.getParameter("cat_id");
+    if(request.getParameter("cat_id") != null)
+    {
+        catid = request.getParameter("cat_id");
+    }
     
     int cid = 0;
     cid = Integer.parseInt(catid);
@@ -46,8 +49,8 @@
                         <%=rs.getInt("likes")%>
                     </span>
                 </div>
-                <div class="col">
-                    <i class="bi bi-cursor i-size"></i>  
+                <div class="col" onclick="showLink(<%=rs.getInt("news_id")%>)">
+                    <i class="bi bi-cursor i-size" ></i>  
                 </div>
                 <div class="col" onclick="doBookmark(<%=rs.getInt("news_id")%>)">
                   <i class="bi bi-bookmarks i-size"></i>

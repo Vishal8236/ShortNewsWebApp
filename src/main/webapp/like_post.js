@@ -69,3 +69,22 @@ function removeBookmark(id)
 }
 
 
+function showLink(id)
+{
+    var url = "http://localhost:8080/ShortNewsNew/news_page.jsp?news_id="+id;
+    var showalt = document.getElementById('show-alert');
+    showalt.classList.remove("d-none");
+    showalt.classList.remove("bg-warning");
+    showalt.classList.add("bg-primary");
+    showalt.classList.add("text-white");
+    showalt.innerText = "Link Copied Successfully";
+//    showalt.select();
+    
+    var sampleTextarea = document.createElement("textarea");
+    document.body.appendChild(sampleTextarea);
+    sampleTextarea.value = url; //save main text in it
+    sampleTextarea.select(); //select textarea contenrs
+    document.execCommand("copy");
+    document.body.removeChild(sampleTextarea);
+}
+
