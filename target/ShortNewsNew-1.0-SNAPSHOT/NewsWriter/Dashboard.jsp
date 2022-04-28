@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="../Style/dashboard-news-writer.css">
         <link rel="stylesheet" href="./Style/sidenav-home.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
-            <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     </head>
     <body class="dash-body">
         <header class="bg-white shadow-sm">
@@ -142,12 +142,12 @@
                                         %>
                                           <tr style="LINE-HEIGHT:50px">
                                                 <th scope="row"><%=rs.getInt("news_id")%></th>
-                                                <td ><a href="./news_page.jsp?news_id=<%=rs.getInt("news_id")%>"><%=rs.getString("title")%></a></td>
+                                                <td ><a href="../news_page.jsp?news_id=<%=rs.getInt("news_id")%>"><%=rs.getString("title")%></a></td>
                                                 <td><%=rs.getInt("views")%></td>
                                                 <td>
                                                     <div>
-                                                        <a href="./NewsWriter/DeletePost?news_id=<%=rs.getInt("news_id")%>" class="btn btn-outline-danger">Delete</a>
-                                                        <a href="./NewsWriter/EditNewsForm.jsp?news_id=<%=rs.getInt("news_id")%>" class="btn btn-outline-success">Edit</a>
+                                                        <a href="/ShortNewsNew/DeletePost?news_id=<%=rs.getInt("news_id")%>" class="btn btn-outline-danger">Delete</a>
+                                                        <a href="../NewsWriter/EditNewsForm.jsp?news_id=<%=rs.getInt("news_id")%>" class="btn btn-outline-success">Edit</a>
                                                     </div>
                                                 </td>
                                                 <td class=""><%=rs.getString("created_date")%></td>

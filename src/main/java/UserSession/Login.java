@@ -74,7 +74,7 @@ public class Login extends HttpServlet {
          }
          else
          {
-            response.sendRedirect("../login-signup.jsp?error='invalid'");
+            response.sendRedirect("../UserSession/login-signup.jsp?error='invalid'");
             
          }
     }

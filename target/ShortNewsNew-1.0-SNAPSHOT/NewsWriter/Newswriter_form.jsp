@@ -132,7 +132,7 @@
                             </strong>
                             <ul class="mt-4">
                                 <li>
-                                    Think of your post title as a super short (but compelling!) description — like an overview of the actual post in one short sentence.
+                                    Think of your post content as a super short (but compelling!) description — like an overview of the actual post in one short sentence.
                                 </li>
                                 <LI>
                                     Use keywords where appropriate to help ensure people can find your post by search.
@@ -144,12 +144,16 @@
                                 Add important tags 
                             </strong>
                             <ul class="mt-4">
-                                <li>
-                                    Think of your post title as a super short (but compelling!) description — like an overview of the actual post in one short sentence.
-                                </li>
                                 <LI>
-                                    Use keywords where appropriate to help ensure people can find your post by search.
+                                    Think of tags as the topics or categories that best describe your post.
                                 </LI>
+                                <li>
+                                    Tags help people find your post.
+                                </li>
+                                <li>
+                                    Add up to four comma-separated tags per post. Combine tags to reach the appropriate subcommunities.
+                                </li>
+                               
                             </ul>
                         </div>
                     </div>

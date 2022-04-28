@@ -56,7 +56,7 @@
             <div class="col-sm-6 container">
                 <div class="flex">
                     <% for(int i = 0; i < taglist.size(); i++){%>
-                        <span class="badge <%=list.get(rand.nextInt(list.size()))%>">#<%=taglist.get(i)%></span>
+                        <span class="mx-2 badge <%=list.get(rand.nextInt(list.size()))%>">#<%=taglist.get(i)%></span>
                     <%}%>
                 </div>
                 <div class="card shadow mt-3" style="width: 53rem;">
